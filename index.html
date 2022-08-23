@@ -14,16 +14,23 @@
         <h2>Vacation Contest Sign-Up Form</h2>
         <form method="GET" action="results.html">
             <div>
+                <span class="required-field">*</span>
                 <label for="firstname">Your First Name</label>
-                <input type="text" id="firstname" name="firstname">
+                <input type="text" id="firstname" name="firstname" minlength="2" maxlength="35" required>
+                <span class="required-field">*</span>
                 <label for="lastname">Your Last Name</label>
-                <input type="text" id="lastname" name="lastname">
-            </div>
+                <input type="text" id="lastname" name="lastname" minlength="2" maxlength="35" rerquired>
+            <label for="age">Your Age</label>
+            <input type="number" id="age" name="age" minlength="21" maxlength="120">
+            <h5>Must be atleast 21 years of age or older.</h5>
+             </div>
+
             <fieldset>
                 <legend>Your Contact Info</legend>
                 <div>
+                    <span class="required-field">*</span>
                     <label for="email">Your Email</label>
-                    <input type="email" id="email" name="email">
+                    <input type="email" id="email" name="email" minlength="2" maxlength="35" required>
                 </div>
                 <div>
                     <label for="address">Your Street Address</label>
@@ -86,8 +93,14 @@
                         <option value="WY">Wyoming</option>
                     </datalist>
                     <label for="zip">Your Zipcode</label>
-                    <input type="text" id="zip" name="zip">
+                    <input type="text" id="zip" name="zip" pattern="[0-9]{5}" title="5-Digit US Zip Code">
+                    
+                    <span class="required-field">*</span>
+                    <label for="secret">Your Secret Code</label>
+                    <input type="password" id="secret" name="secret" required title="6 Alphanumeric Character Passcode" pattern="[0-9a-zA-Z]{6}">
+                
                 </div>
+                
             </fieldset>
 
             <fieldset>
